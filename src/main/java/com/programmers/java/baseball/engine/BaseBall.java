@@ -1,6 +1,7 @@
 package com.programmers.java.baseball.engine;
 
 import com.programmers.java.baseball.io.Input;
+import com.programmers.java.baseball.io.NumberGenerator;
 import com.programmers.java.baseball.io.Output;
 import com.programmers.java.baseball.model.BallCount;
 import com.programmers.java.baseball.model.Numbers;
