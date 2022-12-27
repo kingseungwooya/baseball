@@ -10,6 +10,8 @@ public class App {
     public static void main(String[] args) {
 
         NumberGenerator numberGenerator = new FakerNumberGenerator();
+        // Hack 모드 답이 먼저 보여지는      
+        // NumberGenerator numberGenerator = new HackFakerNumberGenerator();
         Console console = new Console(); // input, output으로도 사용 가능
         new BaseBall(numberGenerator, console, console).run();
     }
