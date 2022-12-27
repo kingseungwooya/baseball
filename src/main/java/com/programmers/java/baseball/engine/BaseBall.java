@@ -8,6 +8,7 @@ import com.programmers.java.baseball.model.Numbers;
 import lombok.AllArgsConstructor;
 
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @AllArgsConstructor
 public class BaseBall implements Runnable {
@@ -37,8 +38,17 @@ public class BaseBall implements Runnable {
         }
     }
 
-    private BallCount ballCount(Numbers answer, Optional<Numbers> inputNumber) {
-        return null;
+    private BallCount ballCount(Numbers answer, Numbers inputNumber) {
+        AtomicInteger strike = new AtomicInteger();
+        AtomicInteger ball = new AtomicInteger();
+        answer.indexOfForEach((a, i) -> {
+            inputNumber.indexOfForEach((n, j) -> {
+                if (!a.equals(n)) return;
+                if (i.equals(j)) strike.addAndGet(1);
+                else ball.addAndGet(1);
+            });
+        });
+        return new BallCount(strike.get(), ball.get());
     }
 
     // 입력값 오류시 Optional을 이용해 처리
