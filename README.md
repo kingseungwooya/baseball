@@ -20,7 +20,7 @@
     - FakerNumberGenerator
 - 핵심로직 설계하기
     - flowChart 설계하기
-![img.png](img.png)
+![img_1.png](img_1.png)
 
 
 
